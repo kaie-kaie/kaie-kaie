@@ -1,0 +1,311 @@
+/* Google Fonts */
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Noto Sans TC', sans-serif; */
+
+:root {
+    --primary-color: #f6ad55; /* 橙色，更符合Minecraft的氛圍 */
+    --accent-color: #68d391; /* 較清新的綠色 */
+    --text-color-dark: #f0f4f8; /* 淺灰白 */
+    --bg-color-dark: #1f2937; /* 深石板灰 */
+    --card-bg-dark: #2d3748; /* 中深藍灰 */
+    --border-color-dark: #4a5568; /* 更深的藍灰 */
+
+    --text-color-light: #1a202c; /* 深藍灰 */
+    --bg-color-light: #f7fafc; /* 淺灰白 */
+    --card-bg-light: #ffffff; /* 純白 */
+    --border-color-light: #edf2f7; /* 極淺灰 */
+}
+
+/* Base Styles (Dark Mode by default) */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    line-height: 1.7; /* 增加行高，閱讀更舒適 */
+    color: var(--text-color-dark);
+    background-color: var(--bg-color-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1000px; /* 稍微縮小容器寬度，更適合內容集中 */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--card-bg-dark);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links li {
+    margin-left: 25px;
+}
+
+.navbar .nav-links a {
+    color: var(--text-color-dark);
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--accent-color);
+}
+
+#theme-toggle {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#theme-toggle:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1500x800/?minecraft,server') no-repeat center center/cover;
+    height: 75vh; /* 更高的英雄區塊 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
+}
+
+.hero-section h1 {
+    font-size: 5em; /* 更大的主標題 */
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.7);
+}
+
+.hero-section p {
+    font-size: 1.8em;
+    font-weight: lighter;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: var(--delay, 0s);
+    border-bottom: 1px solid var(--border-color-dark);
+}
+section:last-of-type {
+    border-bottom: none;
+}
+
+.intro-section {
+    background-color: var(--bg-color-dark);
+}
+.status-section {
+    background-color: var(--card-bg-dark);
+}
+.content-section {
+    background-color: var(--bg-color-dark);
+}
+
+
+section:nth-of-type(1) { --delay: 0.5s; } /* Intro */
+section:nth-of-type(2) { --delay: 1s; }   /* Status */
+section:nth-of-type(3) { --delay: 1.5s; }   /* Content */
+
+/* Specific Section Styles */
+.status-message, .content-message {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 20px 0 30px;
+    text-align: center;
+}
+.status-section p, .content-section p {
+    max-width: 800px;
+    margin: 0 auto 15px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color-dark);
+}
+
+.footer .social-links a {
+    color: var(--text-color-dark);
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.footer p {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #a0aec0;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    color: var(--text-color-light);
+    background-color: var(--bg-color-light);
+}
+
+body.light-mode .navbar {
+    background-color: var(--card-bg-light);
+    border-bottom-color: var(--border-color-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Lighter shadow for light mode */
+}
+
+body.light-mode .navbar .nav-links a {
+    color: var(--text-color-light);
+}
+
+body.light-mode .navbar .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+body.light-mode #theme-toggle {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.light-mode .intro-section,
+body.light-mode .content-section {
+    background-color: var(--bg-color-light);
+    border-bottom-color: var(--border-color-light);
+}
+
+body.light-mode .status-section {
+    background-color: var(--card-bg-light);
+    border-bottom-color: var(--border-color-light);
+}
+
+body.light-mode .footer {
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    border-top-color: var(--border-color-light);
+}
+
+body.light-mode .footer .social-links a {
+    color: var(--text-color-light);
+}
+
+/* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+    .navbar .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .navbar .nav-links li {
+        margin: 5px 10px;
+    }
+    #theme-toggle {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .hero-section h1 {
+        font-size: 3.5em; /* 調整手機版字體大小 */
+    }
+    .hero-section p {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .status-message, .content-message {
+        font-size: 1.4em;
+    }
+    section {
+        padding: 60px 0;
+    }
+}
