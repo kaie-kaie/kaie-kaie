@@ -40,4 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 新增：處理專案卡片的點擊事件
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function() {
+            // 檢查是否有 data-url 屬性
+            const url = this.dataset.url; // 獲取 data-url 的值
+
+            if (url) {
+                window.open(url, '_blank'); // 如果有 data-url，則在新分頁中打開該 URL
+            }
+            // 如果沒有 data-url，則什麼都不做，或者您可以添加其他預設行為
+        });
+    });
 });
