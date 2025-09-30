@@ -120,7 +120,7 @@ a:hover {
     /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1500x800/?coding,workspace') no-repeat center center/cover; */
 
     /* 設定背景圖片，假設圖片名為 'abc.jpg' */
-    background-image: url('abc.jpg');
+    background-image: url('abc.png');
     /* 確保背景圖片不會重複，並且覆蓋整個元素 */
     background-repeat: repeat-x; /* 讓圖片在 X 軸上重複 */
     background-size: auto 100%; /* 確保圖片高度適應元素，寬度自動 */
