@@ -135,7 +135,7 @@ a:hover {
     box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
 
     /* 添加動畫 */
-    animation: scrollBackground 30s linear infinite; /* 30s 是滾動速度，可以調整 */
+    animation: scrollBackground 3000s linear infinite; /* 30s 是滾動速度，可以調整 */
 }
 
 @keyframes scrollBackground {
