@@ -116,7 +116,16 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1500x800/?coding,workspace') no-repeat center center/cover;
+    /* 移除原有的 linear-gradient 和 unsplash 圖片 */
+    /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1500x800/?coding,workspace') no-repeat center center/cover; */
+
+    /* 設定背景圖片，假設圖片名為 'abc.jpg' */
+    background-image: url('abc.jpg');
+    /* 確保背景圖片不會重複，並且覆蓋整個元素 */
+    background-repeat: repeat-x; /* 讓圖片在 X 軸上重複 */
+    background-size: auto 100%; /* 確保圖片高度適應元素，寬度自動 */
+    background-position: 0 0; /* 初始位置 */
+
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -124,6 +133,18 @@ a:hover {
     text-align: center;
     color: white;
     box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
+
+    /* 添加動畫 */
+    animation: scrollBackground 30s linear infinite; /* 30s 是滾動速度，可以調整 */
+}
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0; /* 從左邊開始 */
+    }
+    to {
+        background-position: -200% 0; /* 滾動到左邊，負值表示向左滾動。200%是為了確保圖片完全移出，可以根據圖片寬度調整 */
+    }
 }
 
 .hero-section h1 {
